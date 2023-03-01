@@ -12,7 +12,7 @@ class Funcionario(models.Model):
         db_table = 'tb_funcionario'
 
     def __str__(self) -> str:
-        return self.nome
+        return f"ID {self.id} - {self.nome} {self.sobrenome}"
 
 
 class Produto(models.Model):

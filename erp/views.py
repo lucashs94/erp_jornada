@@ -5,7 +5,7 @@ from django.views.generic import TemplateView, CreateView, ListView, UpdateView,
 from django.views.generic.edit import DeleteView
 from django.http import Http404, HttpRequest, HttpResponseRedirect
 
-from .models import Funcionario, Produto
+from .models import Funcionario, Produto, Venda
 from .forms import FuncionarioForm, ProdutoForm
 
 
@@ -125,3 +125,30 @@ class ProdutoDeleteView(DeleteView):
         except Http404:
             return None
         
+        
+
+# VIEWS DE VENDAS
+
+class VendaCreateView(CreateView):
+    model = Venda
+    template_name = 'erp/vendas/novo.html'
+    success_url = reverse_lazy('erp:home')
+    fields = ['funcionario','produto']
+    
+    
+class VendaListView(ListView):
+    model = Venda
+    template_name = 'erp/vendas/lista.html'
+    context_object_name = 'vendas'
+    
+    
+class VendaDateilView(DetailView):
+    model = Venda
+    template_name = 'erp/vendas/detalhe.html'
+    context_object_name = 'venda'
+    
+    def get_object(self, queryset=None):            # Sobrescrevendo metodo da classe DETAILVIEW para capturar o erro e mudar o retorno
+        try:
+            return super().get_object(queryset)
+        except Http404:
+            return None

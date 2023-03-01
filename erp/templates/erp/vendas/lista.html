@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros de Vendas - ERP</title>
+</head>
+<body>
+    <h1>Registro de Vendas</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID:</th>
+                <th>Funcionario:</th>
+                <th>Produto:</th>
+                <th>Data/Hora:</th>
+                <th>Ações:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for venda in vendas %}
+                <tr>
+                    <td>{{ venda.id }}</td>
+                    <td>{{ venda.funcionario }}</td>
+                    <td>{{ venda.produto }}</td>
+                    <td>{{ venda.data_hora }}</td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
