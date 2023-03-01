@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Deleção de Vendas - ERP</title>
+</head>
+<body>
+    {% if venda %}
+        <h1>Deleção do Venda: {{ venda.produto }}</h1>
+        
+        <form method="POST"> {% csrf_token %}
+            
+            <p>Você confirma a EXCLUSÃO da Venda "{{ venda.produto }}" (id = {{ venda.id }})?</p>
+            
+            <button type="submit">Confirmar Exclusão</button>
+        </form>
+    {% else %}
+        <h1>Venda com este ID não encontrado!</h1>
+    {% endif %}
+</body>
+</html>
