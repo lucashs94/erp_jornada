@@ -36,5 +36,5 @@ class Venda(models.Model):
         db_table = 'tb_venda'
 
     def __str__(self) -> str:
-        return self.funcionario + ' - ' + self.produto
+        return f"{self.funcionario}  -   {self.produto}"
         
