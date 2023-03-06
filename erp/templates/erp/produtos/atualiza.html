@@ -9,8 +9,12 @@
 <body>
     <h1>Formulário de Atualização de Produto</h1>
 
-    <form action='' method="POST">{% csrf_token %}
+    <form action='' method="POST" enctype="multipart/form-data">{% csrf_token %}
         
+        {% if produto.imagem %}
+            <img src="{{ produto.imagem.url }}" alt="Thumb do produto" width="200">
+        {% endif %}
+
         {{ form }}
         
         <button type="submit">Atualizar Produto</button>

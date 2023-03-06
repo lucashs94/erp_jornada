@@ -12,10 +12,11 @@
     <table>
         <thead>
             <tr>
-                <th>ID:</th>
-                <th>Nome:</th>
-                <th>Descrição:</th>
-                <th>Preço:</th>
+                <th>ID</th>
+                <th>Imagem do Produto</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -23,6 +24,11 @@
             {% for produto in produtos %}
                 <tr>
                     <td>{{produto.id}}</td>
+                    <td>
+                        {% if produto.imagem %}
+                        <img src="{{ produto.imagem.url }}" alt="thumb do produto" width="100">
+                        {% endif %}
+                    </td>
                     <td>{{produto.nome}}</td>
                     <td>{{produto.descricao}}</td>
                     <td>{{produto.preco}}</td>

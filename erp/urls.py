@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf.urls.static import static
+from core import settings
 from .views import HomeView, cria_funcionario, lista_funcionarios, \
     busca_funcionario_id, atualiza_funcionario, \
     ProdutoCreateView, ProdutoListView, ProdutoUpdateView, ProdutoDetailView, ProdutoDeleteView, \
@@ -29,3 +31,7 @@ urlpatterns = [
     path('vendas/atualiza/<int:pk>', VendaUpdateView.as_view(), name='atualiza_venda'),
     path('vendas/deleta/<int:pk>', VendaDeleteView.as_view(), name='deleta_venda'),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

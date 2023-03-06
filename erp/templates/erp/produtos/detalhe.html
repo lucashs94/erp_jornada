@@ -10,6 +10,10 @@
     {% if produto %}
         <h1>Detalhes do Produto {{ produto.nome }}</h1>
 
+        {% if produto.imagem %}
+            <img src="{{ produto.imagem.url }}" alt="thumb do produto" width="250">
+        {% endif %}
+
         <ul>
             <li><b>Nome:</b> {{produto.nome}}</li>
             <li><b>Descrição:</b> {{produto.descricao}}</li>
