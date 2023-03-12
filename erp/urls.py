@@ -4,12 +4,19 @@ from core import settings
 from .views import HomeView, cria_funcionario, lista_funcionarios, \
     busca_funcionario_id, atualiza_funcionario, \
     ProdutoCreateView, ProdutoListView, ProdutoUpdateView, ProdutoDetailView, ProdutoDeleteView, \
-    VendaCreateView, VendaListView, VendaDateilView, VendaUpdateView, VendaDeleteView
+    VendaCreateView, VendaListView, VendaDateilView, VendaUpdateView, VendaDeleteView, ErpLoginView, DashboardView, ErpLogoutView
 
 app_name = 'erp'
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
+    
+    path('dashboard/', DashboardView.as_view(), name='dashboard'),
+    
+    
+    # Auth
+    path('login/', ErpLoginView.as_view(), name='login'),
+    path('logout/', ErpLogoutView.as_view(), name='logout'),
 
     # Funcionários
     path('funcionarios/novo', cria_funcionario, name='novo_funcionario'),
@@ -30,6 +37,7 @@ urlpatterns = [
     path('vendas/detalhe/<int:pk>', VendaDateilView.as_view(), name='detalhe_venda'),
     path('vendas/atualiza/<int:pk>', VendaUpdateView.as_view(), name='atualiza_venda'),
     path('vendas/deleta/<int:pk>', VendaDeleteView.as_view(), name='deleta_venda'),
+    
 ]
 
 

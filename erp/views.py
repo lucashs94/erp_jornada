@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 
+from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DetailView
 from django.views.generic.edit import DeleteView
 from django.http import Http404, HttpRequest, HttpResponseRedirect
@@ -9,7 +10,18 @@ from .models import Funcionario, Produto, Venda
 from .forms import FuncionarioForm, ProdutoForm
 
 
-# Create your views here.
+
+# AUTH
+
+class ErpLoginView(LoginView):
+    template_name = 'erp/auth/login.html'
+    success_url = reverse_lazy('erp:dashboard')
+    redirect_authenticated_user = True
+
+
+class ErpLogoutView(LogoutView):
+    template_name = 'erp/auth/logout.html'
+
 # def home(request: HttpRequest):
 #     if request.method == 'GET':
 #         return render(request,'erp/index.html')
@@ -17,6 +29,12 @@ from .forms import FuncionarioForm, ProdutoForm
 class HomeView(TemplateView):
     template_name = 'erp/index.html'
     
+    
+    
+class DashboardView(TemplateView):
+    template_name = 'erp/dashboard.html'
+    
+
 
 def cria_funcionario(request: HttpRequest):
     if request.method == 'GET':
