@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DetailView
 from django.views.generic.edit import DeleteView
@@ -22,20 +24,19 @@ class ErpLoginView(LoginView):
 class ErpLogoutView(LogoutView):
     template_name = 'erp/auth/logout.html'
 
-# def home(request: HttpRequest):
-#     if request.method == 'GET':
-#         return render(request,'erp/index.html')
 
 class HomeView(TemplateView):
     template_name = 'erp/index.html'
     
     
     
-class DashboardView(TemplateView):
+class DashboardView(LoginRequiredMixin, TemplateView):
     template_name = 'erp/dashboard.html'
     
 
 
+## FUNCIONARIOS VIEWS ##
+@login_required
 def cria_funcionario(request: HttpRequest):
     if request.method == 'GET':
         form = FuncionarioForm()
@@ -56,6 +57,7 @@ def cria_funcionario(request: HttpRequest):
             return HttpResponseRedirect(redirect_to='/')
         
 
+@login_required
 def lista_funcionarios(request: HttpRequest):
     if request.method == 'GET':
         funcionarios = Funcionario.objects.all()
@@ -65,6 +67,7 @@ def lista_funcionarios(request: HttpRequest):
         return render(request, 'erp/funcionarios/lista.html', context)
     
 
+@login_required
 def busca_funcionario_id(request: HttpRequest, pk: int):
     if request.method == 'GET':
         try:
@@ -77,6 +80,7 @@ def busca_funcionario_id(request: HttpRequest, pk: int):
         return render(request, 'erp/funcionarios/detalhe.html', context)
     
 
+@login_required
 def atualiza_funcionario(request:HttpRequest, pk:int):
     if request.method == 'GET':
         funcionario = Funcionario.objects.get(pk=pk)
@@ -97,27 +101,27 @@ def atualiza_funcionario(request:HttpRequest, pk:int):
     
 
 # Views de Produtos
-class ProdutoCreateView(CreateView):
+class ProdutoCreateView(LoginRequiredMixin, CreateView):
     template_name = 'erp/produtos/novo.html'
     model = Produto
     form_class = ProdutoForm
     success_url = reverse_lazy('erp:home')
 
 
-class ProdutoListView(ListView):
+class ProdutoListView(LoginRequiredMixin, ListView):
     model = Produto
     template_name = 'erp/produtos/lista.html'
     context_object_name = 'produtos'
     
     
-class ProdutoUpdateView(UpdateView):
+class ProdutoUpdateView(LoginRequiredMixin, UpdateView):
     model = Produto
     template_name = 'erp/produtos/atualiza.html'
     form_class = ProdutoForm
     success_url = reverse_lazy('erp:lista_produtos')
     
     
-class ProdutoDetailView(DetailView):
+class ProdutoDetailView(LoginRequiredMixin, DetailView):
     model = Produto
     template_name = 'erp/produtos/detalhe.html'
     context_object_name = 'produto'
@@ -130,7 +134,7 @@ class ProdutoDetailView(DetailView):
             return None
         
         
-class ProdutoDeleteView(DeleteView):
+class ProdutoDeleteView(LoginRequiredMixin, DeleteView):
     model = Produto
     template_name = 'erp/produtos/deleta.html'
     context_object_name = 'produto'
@@ -147,20 +151,20 @@ class ProdutoDeleteView(DeleteView):
 
 # VIEWS DE VENDAS
 
-class VendaCreateView(CreateView):
+class VendaCreateView(LoginRequiredMixin, CreateView):
     model = Venda
     template_name = 'erp/vendas/novo.html'
     success_url = reverse_lazy('erp:lista_vendas')
     fields = ['funcionario','produto']
     
     
-class VendaListView(ListView):
+class VendaListView(LoginRequiredMixin, ListView):
     model = Venda
     template_name = 'erp/vendas/lista.html'
     context_object_name = 'vendas'
     
     
-class VendaDateilView(DetailView):
+class VendaDateilView(LoginRequiredMixin, DetailView):
     model = Venda
     template_name = 'erp/vendas/detalhe.html'
     context_object_name = 'venda'
@@ -172,14 +176,14 @@ class VendaDateilView(DetailView):
             return None
         
         
-class VendaUpdateView(UpdateView):
+class VendaUpdateView(LoginRequiredMixin, UpdateView):
     model = Venda
     template_name = 'erp/vendas/atualiza.html'
     fields = ['funcionario','produto']
     success_url = reverse_lazy('erp:lista_vendas')
     
     
-class VendaDeleteView(DeleteView):
+class VendaDeleteView(LoginRequiredMixin, DeleteView):
     model = Venda
     template_name = 'erp/vendas/deleta.html'
     context_object_name = 'venda'
