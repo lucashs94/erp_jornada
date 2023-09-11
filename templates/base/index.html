@@ -1,0 +1,235 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- IMPORTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Poppins:wght@400;500;700;900&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+
+	<!-- STYLES -->
+	<link rel="stylesheet" type="text/css" href="{% static 'base/css/base.css' %}">
+
+	<title>ERP - ABC</title>
+
+</head>
+
+<body>
+	<nav>
+		<div class="container">
+			<div class="logo">
+				<p>ERP { <span class="fonte-azul">ABC</span> }</p>
+			</div>
+			<ul>
+				<li><a href="">Início</a></li>
+				<li><a href="">Clientes</a></li>
+				<li><a href="">Características</a></li>
+				<li><a href="">Preços</a></li>
+				<li><a href="">Login</a></li>
+				<li>
+					<button>
+						<a href="">Inscreva-se</a>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section id="hero">
+		<div class="container">
+			<div class="hero-main">
+				<div class="text-hero">
+					<h1>Gerencie os recursos da sua empresa de maneira simples e eficiente</h1>
+					<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorem quod delectus quis quos esse
+						necessitatibus accusantium cumque.
+						Placeat saepe modi aperiam soluta adipisci itaque qui distinctio, expedita reprehenderit quam?
+					</h2>
+					<input type="email" placeholder="Insira seu e-mail" id="">
+					<button>Inscreva-se</button>
+				</div>
+				<div class="image-hero">
+					<img src="{% static 'base/img/sistema.png'%}" alt="Sistema ERP" width="100%">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="clients">
+		<div class="container">
+			<h2>Nossos Clientes</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			</p>
+			<div class="logo-clients">
+				<img src="{% static 'base/img/coca-cola-logo.png'%}" alt="logo coca-cola">
+				<img src="{% static 'base/img/hp-logo.png'%}" alt="logo coca-cola">
+				<img src="{% static 'base/img/google-logo.png'%}" alt="logo coca-cola">
+				<img src="{% static 'base/img/nvidia-logo.png'%}" alt="logo coca-cola">
+			</div>
+		</div>
+	</section>
+
+	<section id="diferenciais">
+		<div class="dife container">
+			<div class="diferencial">
+				<img src="{% static 'base/img/diferencial-1.png' %}" alt="diferencial 1">
+				<h3>Diferencial 1</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quia qui maxime magnam est, 
+					ipsam nulla molestias explicabo id aut at consequatur. 
+				</p>
+				<a href="#">Saiba mais!</a>
+			</div>
+			
+			<div class="diferencial">
+				<img src="{% static 'base/img/diferencial-2.png' %}" alt="diferencial 2">
+				<h3>Diferencial 2</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quia qui maxime magnam est, 
+					ipsam nulla molestias explicabo id aut at consequatur. 
+				</p>
+				<a href="#">Saiba mais!</a>
+			</div>
+			
+			<div class="diferencial">
+				<img src="{% static 'base/img/diferencial-3.png' %}" alt="diferencial 3">
+				<h3>Diferencial 3</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quia qui maxime magnam est, 
+					ipsam nulla molestias explicabo id aut at consequatur. 
+				</p>
+				<a href="#">Saiba mais!</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="caracteristicas">
+		<div class="container">
+			<h2>Características</h2>
+
+			<div class="caracteristica">
+				<div class="image">
+					<img src="{% static 'base/img/caracteristica-1.png' %}" alt="Caracteristica 1">
+				</div>
+				<div class="texto">
+					<h3>Característica 1</h3>
+
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quia qui maxime magnam est, 
+						ipsam nulla molestias explicabo id aut at consequatur. 
+					</p>
+				</div>
+			</div>
+
+			<div class="caracteristica right">
+				<div class="texto">
+					<h3>Característica 2</h3>
+
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quia qui maxime magnam est, 
+						ipsam nulla molestias explicabo id aut at consequatur. 
+					</p>
+				</div>
+				<div class="image">
+					<img src="{% static 'base/img/caracteristica-2.png' %}" alt="Caracteristica 2">
+				</div>
+			</div>
+
+
+			<div class="caracteristica">
+				<div class="image">
+					<img src="{% static 'base/img/caracteristica-3.png' %}" alt="Caracteristica 3">
+				</div>
+				<div class="texto">
+					<h3>Característica 3</h3>
+
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quia qui maxime magnam est, 
+						ipsam nulla molestias explicabo id aut at consequatur. 
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="planos">
+		<div class="container">
+			<h2>Planos de Preços</h2>
+
+			<div class="planos">
+				<div class="plano">
+					<h3>Plano Básico</h3>
+					<h4>R$ 99,90/mês</h4>
+
+					<ul>
+						<li>5 usuários</li>
+						<li>Armazenamento de 10 GB</li>
+						<li>Suporte por E-mail</li>
+					</ul>
+
+					<button class="button">Assine Agora</button>
+				</div>
+				<div class="plano">
+					<h3>Plano Padrão</h3>
+					<h4>R$ 199,90/mês</h4>
+
+					<ul>
+						<li><b>Plano básico +</b></li>
+						<li>15 usuários</li>
+						<li>Armazenamento de 30 GB</li>
+						<li>Suporte por E-mail e Telefone</li>
+						<li>Acesso ao Chat de suporte</li>
+					</ul>
+
+					<button class="button">Assine Agora</button>
+				</div>
+				<div class="plano">
+					<h3>Plano Premium</h3>
+					<h4>R$ 99,90/mês</h4>
+
+					<ul>
+						<li><b>Plano padrão +</b></li>
+						<li>15 usuários</li>
+						<li>Armazenamento de 30 GB</li>
+						<li>Suporte por E-mail e Telefone</li>
+						<li>Acesso ao Chat de suporte</li>
+					</ul>
+
+					<button class="button">Assine Agora</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<p>Todos os direitos reservados <b>Empresa ABC</b></p>
+
+			<ul>
+				<li>
+					<a href="">
+						<img src="{% static 'base/img/facebook.png' %}" alt="facebook logo">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="{% static 'base/img/instagram.png' %}" alt="instagram logo">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="{% static 'base/img/linkedin.png' %}" alt="linkedin logo">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+</body>
+
+</html>

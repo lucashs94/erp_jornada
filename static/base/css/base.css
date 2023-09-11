@@ -1,0 +1,391 @@
+:root{
+  --azul-escuro: #376CFBFF;
+  --azul-medio: #4294ff;
+  --azul: #e6ecff;
+  --cinza-escuro: #2d2d34ff;
+  --cinza-claro: #f2f2f2ff;
+  --branco: #fff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+}
+
+/* UTILITARIOS */
+.fonte-azul{
+  color: var(--azul-medio);
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----------- */
+
+
+/* NAVEGACAO */
+nav{
+  background-color: var(--cinza-escuro);
+  padding: 2rem 5rem;
+}
+
+nav .logo{
+  display: inline;
+}
+
+nav p{
+  display: inline;
+  color: var(--branco);
+  font-size: 2.6rem;
+}
+
+nav ul{
+  list-style: none;
+  float: right;
+  margin: 0;
+}
+
+nav li{
+  display: inline-block;
+}
+
+nav ul li a{
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 0.8rem;
+  transition: color 0.2s ease;
+  font-size: 2rem;
+}
+
+nav ul li a:hover{
+  color: var(--azul-medio);
+}
+
+nav ul li button{
+  background: var(--azul-medio);
+  border: 0;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease ;
+}
+
+nav ul li button a{
+  display: inline-block;
+  padding: 0.45rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+nav ul li button:hover{
+  background-color: var(--cinza-claro);
+}
+
+nav ul li button:hover a{
+  color: var(--cinza-escuro);
+}
+
+/* ------------ */
+
+/* SECTION: HERO */
+#hero{
+  display: flex;
+  height: 700px;
+  flex-direction: row;
+  background-color: var(--cinza-claro);
+  padding: 12rem 5rem;
+  align-items: center;
+}
+
+.hero-main{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#hero div.text-hero,
+#hero div.image-hero{
+  flex: 1;
+}
+
+#hero div.text-hero{
+  margin-top: -50px;
+}
+
+#hero div.image-hero img{
+  max-width: 700px;
+}
+
+#hero h1{
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+#hero h2{
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+#hero input{
+  height: 40px;
+  padding: 0.9rem;
+  border: 0;
+  width: 60%;
+  font-size: 16px;
+  border-radius: 0.25rem;
+}
+
+#hero .text-hero button{
+  background-color: var(--azul-medio);
+  height: 40px;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.5rem;
+  color: var(--branco);
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#hero .text-hero button:hover{
+  background-color: var(--cinza-escuro);
+}
+
+/* ------------ */
+
+
+/* SECTION: CLIENTES */
+
+#clients{
+  text-align: center;
+  background-color: var(--cinza-escuro);
+  padding: 6rem;
+}
+
+#clients h2{
+  color: var(--branco);
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+#clients p{
+  color: var(--branco);
+  font-size: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.logo-clients{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 60px;
+  overflow-x: hidden;
+}
+
+.logo-clients img{
+  max-width: 100%;
+  max-height: 80px;
+}
+
+/* ------------ */
+
+
+/* SECTION: DIFERENCIAL */
+#diferenciais{
+  background-color: #F2F2F2;
+  color: var(--cinza-escuro); 
+  padding: 6rem 0;
+}
+
+#diferenciais .diferencial{
+  background-color: var(--branco);
+  width: 28.33333%;
+  padding: 2% 4%;
+  margin: 2%;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#diferenciais .diferencial img{
+  margin-bottom: 1.5rem;
+}
+
+#diferenciais .diferencial h3{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#diferenciais .diferencial p{
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  text-align: justify;
+}
+
+#diferenciais .diferencial a{
+  font-size: 1.5rem;
+  color: var(--cinza-escuro);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ------------ */
+
+
+/* SECTION: CARACTERISTICA */
+#caracteristicas{
+  background-color: var(--branco);
+  padding: 8rem 0 0 0;
+}
+
+#caracteristicas h2{
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+#caracteristicas .caracteristica{
+  display: flex;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+
+#caracteristicas .caracteristica.right .texto{
+  text-align: right;
+}
+
+#caracteristicas .caracteristica .image{
+  float: left;
+}
+
+#caracteristicas .caracteristica .image img{
+  max-width: 250px;
+}
+
+#caracteristicas .caracteristica .texto h3{
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#caracteristicas .caracteristica .texto p{
+  font-size: 1.5rem;
+  /* font-weight: 100; */
+}
+
+/* ------------ */
+
+
+/* SECTION: PLANOS */
+#planos{
+  background-color: var(--cinza-claro);
+  padding: 6rem 0 4rem 0;
+}
+
+#planos h2{
+  text-align: center;
+  font-size: 4rem;  
+  margin-bottom: 4rem;
+}
+
+#planos .planos{
+  display: flex;
+}
+
+#planos .planos .plano{
+  background-color: var(--branco);
+  position: relative;
+  width: 28.3333%;
+  height: 500px;
+  border-radius: 12px;
+  margin: 2%;
+  padding: 4% 2%;
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+
+#planos .planos .plano:hover{
+  box-shadow: 0 0 16px rgba(0,0,0, 0.25);
+  border-color: var(--cinza-escuro);
+}
+
+#planos .planos .plano h3{
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#planos .planos .plano h4{
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--azul-medio);
+  margin-bottom: 3rem;
+}
+
+#planos .planos .plano ul{
+  list-style: none;
+}
+
+#planos .planos .plano ul li{
+  font-size: 1.5rem;
+  padding: 8px;
+  border-bottom: 1px solid #CCC;
+}
+
+#planos .planos .plano button{
+  position: absolute;
+  bottom: 5%;
+  width: 85%;
+  background-color: var(--azul-medio);
+  padding: 16px 0;
+  border: 0;
+  border-radius: 8px;
+  color: var(--branco);
+  font-size: 2rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+#planos .planos .plano button:hover{
+  background-color: var(--cinza-escuro);
+  cursor: pointer;
+}
+
+/* ------------ */
+
+
+/* FOOTER */
+footer{
+  background-color: var(--azul-escuro);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+footer p{
+  color: var(--branco);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+footer ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+footer a img{
+  max-width: 30px;
+}
+
+/* ------------ */

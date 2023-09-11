@@ -21,7 +21,7 @@ urlpatterns = [
     # Funcionários
     path('funcionarios/novo', cria_funcionario, name='novo_funcionario'),
     path('funcionarios/lista', lista_funcionarios, name='lista_funcionarios'),
-    path('funcionarios/detalhe/<int:pk>', busca_funcionario_id, name='busca_funcionaruio'),
+    path('funcionarios/detalhe/<int:pk>', busca_funcionario_id, name='busca_funcionario'),
     path('funcionarios/atualiza/<int:pk>', atualiza_funcionario, name='atualiza_funcionario'),
     
     # Produtos

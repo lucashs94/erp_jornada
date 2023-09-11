@@ -14,7 +14,6 @@ from .forms import FuncionarioForm, ProdutoForm
 
 
 # AUTH
-
 class ErpLoginView(LoginView):
     template_name = 'erp/auth/login.html'
     success_url = reverse_lazy('erp:dashboard')
@@ -26,7 +25,7 @@ class ErpLogoutView(LogoutView):
 
 
 class HomeView(TemplateView):
-    template_name = 'erp/index.html'
+    template_name = 'base/index.html'
     
     
     
