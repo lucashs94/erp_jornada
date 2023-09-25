@@ -62,7 +62,7 @@ nav ul li a{
   text-decoration: none;
   margin: 0 0.8rem;
   transition: color 0.2s ease;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 nav ul li a:hover{
@@ -79,7 +79,7 @@ nav ul li button{
 nav ul li button a{
   display: inline-block;
   padding: 0.45rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -89,6 +89,29 @@ nav ul li button:hover{
 
 nav ul li button:hover a{
   color: var(--cinza-escuro);
+}
+
+@media (max-width: 800px){
+  nav{
+    background-color: var(--cinza-escuro);
+    padding: 2rem 1rem;
+  }
+
+  nav ul li a{
+    margin: 0 0.3rem;
+    font-size: 1.5rem;
+  }
+  
+  .container{
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 650px){
+  nav ul li a{
+    display: none;
+  }
 }
 
 /* ------------ */
@@ -158,6 +181,29 @@ nav ul li button:hover a{
   background-color: var(--cinza-escuro);
 }
 
+@media (max-width: 800px){
+  #hero{
+    padding: 4rem 4rem;
+    display: block;
+    height: 100%;
+  }
+
+  .hero-main{
+    display: flex; 
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #hero div.text-hero{
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  #hero div.image-hero img{
+    max-width: 500px;
+  }
+}
+
 /* ------------ */
 
 
@@ -184,14 +230,39 @@ nav ul li button:hover a{
 .logo-clients{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 60px;
-  overflow-x: hidden;
 }
 
 .logo-clients img{
   max-width: 100%;
   max-height: 80px;
+}
+
+@media (max-width: 800px){
+  #clients{
+    padding: 4rem 6rem;
+  }
+
+  #clients h2{
+    margin-bottom: 1rem;
+  }
+
+  .logo-clients{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+  }
+
+  .logo-clients img{
+    max-width: 40%;
+    max-height: 8 0px;
+  }
 }
 
 /* ------------ */
@@ -237,6 +308,18 @@ nav ul li button:hover a{
   text-transform: uppercase;
 }
 
+@media (max-width: 800px){
+  #diferenciais .diferencial{
+    width: 100%;
+    margin: 1rem 0;
+    padding: 3rem;
+  }
+
+  #diferenciais{
+    padding: 6rem 20px;
+  }
+}
+
 /* ------------ */
 
 
@@ -256,6 +339,7 @@ nav ul li button:hover a{
   display: flex;
   align-items: center;
   margin-bottom: 8rem;
+  padding: 0 2rem;
 }
 
 #caracteristicas .caracteristica.right .texto{
@@ -277,7 +361,36 @@ nav ul li button:hover a{
 
 #caracteristicas .caracteristica .texto p{
   font-size: 1.5rem;
-  /* font-weight: 100; */
+}
+
+
+@media (max-width: 800px){
+  #caracteristicas{
+    background-color: var(--branco);
+    padding: 6rem 0 3rem 0;
+  }
+
+  #caracteristicas .caracteristica{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  #caracteristicas .caracteristica .texto{
+    padding: 0 8%;
+  }
+
+  #caracteristicas .caracteristica.right .texto{
+    text-align: inherit;
+  }
+
+  #caracteristicas .caracteristica .texto h3{
+    text-align: center;
+  }
+
+  #caracteristicas .caracteristica .texto p{
+    text-align: justify;
+  }
 }
 
 /* ------------ */
@@ -360,6 +473,31 @@ nav ul li button:hover a{
   cursor: pointer;
 }
 
+@media (max-width: 800px){
+  #planos h2{
+    margin-bottom: 0;
+  }
+
+  #planos .planos{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+  }
+
+  #planos .planos .plano{
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    padding: 3rem;
+  }
+
+  #planos .planos .plano button{
+    position: inherit;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
 /* ------------ */
 
 
@@ -386,6 +524,13 @@ footer ul{
 
 footer a img{
   max-width: 30px;
+}
+
+@media (max-width: 800px){
+  footer p{
+    font-size: 1.5rem;
+  }
+
 }
 
 /* ------------ */
